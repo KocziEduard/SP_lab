@@ -1,6 +1,6 @@
 package ro.uvt.info.sp_lab;
 
-public class Paragraph {
+public class Paragraph implements Element {
     String text;
 
     public Paragraph(String text) {
