@@ -10,22 +10,18 @@ import java.util.List;
 public class SpLabApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpLabApplication.class, args);
-        Book discoTitanic = new Book("Disco titanic");
-        Author author = new Author("John Doe");
+        Section chapter1 = new Section("Chapter 1");
 
-        discoTitanic.authors.add(author);
-        Chapter chp1 = new Chapter("Capitol 1");
-        Subchapter subchapter = new Subchapter("Introduction");
+        Section section1_1 = new Section("Section 1.1");
+        section1_1.add(new Paragraph("This is a paragraph in Section 1.1."));
+        section1_1.add(new Image("image1.jpg"));
 
-        Element image = new Image("intro.jpg");
-        Element paragraph = new Paragraph("Welcome to our book!");
-        Element table = new Table("Chapter Summary");
+        Section section1_2 = new Section("Section 1.2");
+        section1_2.add(new Paragraph("This is a paragraph in Section 1.2."));
 
-        subchapter.addElement(image);
-        subchapter.addElement(paragraph);
-        subchapter.addElement(table);
+        chapter1.add(section1_1);
+        chapter1.add(section1_2);
 
-        subchapter.print();
+        chapter1.print();
     }
 }

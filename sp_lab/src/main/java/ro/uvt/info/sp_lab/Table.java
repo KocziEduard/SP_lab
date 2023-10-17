@@ -18,4 +18,20 @@ public class Table implements Element{
     public void print() {
         System.out.println("Table: " + title);
     }
+
+    @Override
+    public void add(Element element) {
+        System.out.println("Images cannot contain other elements.");
+    }
+
+    @Override
+    public void remove(Element element) {
+        System.out.println("Images cannot contain other elements.");
+    }
+
+    @Override
+    public Element get(int nr) {
+        System.out.println("Images cannot contain other elements.");
+        return null;
+    }
 }
