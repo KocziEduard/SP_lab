@@ -1,6 +1,6 @@
 package ro.uvt.info.sp_lab;
 
-public class Image {
+public class Image implements Element{
     String imageName;
 
     public Image(String imageName) {
@@ -13,5 +13,9 @@ public class Image {
 
     public void setImageName(String imageName) {
         this.imageName = imageName;
+    }
+
+    public void print() {
+        System.out.println("Image: " + imageName);
     }
 }
