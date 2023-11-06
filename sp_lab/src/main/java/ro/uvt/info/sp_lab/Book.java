@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Book {
     String title;
-    List<Author> authors = new ArrayList<Author>();
-    List<Section> sections = new ArrayList<Section>();
+    List<Author> authors = new ArrayList<>();
+    List<Section> sections = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
@@ -34,6 +34,10 @@ public class Book {
 
     public void setSections(List<Section> sections) {
         this.sections = sections;
+    }
+
+    public void addSection(Section section) {
+        sections.add(section);
     }
 
     public void print() {

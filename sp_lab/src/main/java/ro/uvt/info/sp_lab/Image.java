@@ -1,22 +1,34 @@
 package ro.uvt.info.sp_lab;
 
-public class Image implements Element{
-    String imageName;
+import java.util.concurrent.TimeUnit;
+
+public class Image implements Element, Picture{
+    private String url;
 
     public Image(String imageName) {
-        this.imageName = imageName;
+        this.url = imageName;
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
-    public String getImageName() {
-        return imageName;
+    public String url() {
+        System.out.println("Images cannot contain url.");
+        return null;
     }
 
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String imageName) {
+        this.url = imageName;
     }
 
     public void print() {
-        System.out.println("Image: " + imageName);
+        System.out.println("Image: " + url);
     }
 
     @Override
