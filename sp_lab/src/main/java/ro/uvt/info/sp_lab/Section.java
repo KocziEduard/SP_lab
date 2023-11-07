@@ -28,9 +28,20 @@ public class Section implements Element{
 
     @Override
     public void print() {
-        System.out.println("Section: " + name);
+        System.out.println(name);
         for (Element element : elements) {
             element.print();
+        }
+    }
+
+    public void print(int lineLength) {
+        System.out.println(name);
+        for (Element element : elements) {
+            if (element instanceof Paragraph) {
+                ((Paragraph) element).print(lineLength);
+            } else {
+                element.print();
+            }
         }
     }
 }
