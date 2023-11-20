@@ -1,4 +1,4 @@
-package ro.uvt.info.sp_lab;
+package ro.uvt.info.sp_lab.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,8 +48,5 @@ public class Book {
         }
 
         System.out.println("Sections:");
-        for (Section section : sections) {
-            section.print();
-        }
     }
 }

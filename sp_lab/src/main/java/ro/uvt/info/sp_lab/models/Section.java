@@ -1,14 +1,22 @@
-package ro.uvt.info.sp_lab;
+package ro.uvt.info.sp_lab.models;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Section implements Element{
+public class Section implements Element, Visitee {
     String name;
     List<Element> elements = new ArrayList<>();
 
     public Section(String name) {
         this.name = name;
+    }
+
+    public String getTitle(){
+        return name;
+    }
+
+    public List<Element> getElements(){
+        return elements;
     }
 
     public void add(Element element) {
@@ -25,23 +33,8 @@ public class Section implements Element{
         }
         return null;
     }
-
     @Override
-    public void print() {
-        System.out.println(name);
-        for (Element element : elements) {
-            element.print();
-        }
-    }
-
-    public void print(int lineLength) {
-        System.out.println(name);
-        for (Element element : elements) {
-            if (element instanceof Paragraph) {
-                ((Paragraph) element).print(lineLength);
-            } else {
-                element.print();
-            }
-        }
+    public void accept(Visitor v) {
+        v.visitSection(this);
     }
 }

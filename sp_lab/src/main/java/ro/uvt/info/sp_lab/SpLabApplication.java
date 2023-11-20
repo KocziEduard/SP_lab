@@ -1,6 +1,10 @@
 package ro.uvt.info.sp_lab;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import ro.uvt.info.sp_lab.models.Paragraph;
+import ro.uvt.info.sp_lab.models.Section;
+import ro.uvt.info.sp_lab.services.AlignLeft;
+import ro.uvt.info.sp_lab.services.AlignRight;
 
 @SpringBootApplication
 public class SpLabApplication {
@@ -17,13 +21,11 @@ public class SpLabApplication {
         cap1.add(p4);
         System.out.println("Printing without Alignment");
         System.out.println();
-        cap1.print(120);
         p2.setAlignText(new AlignRight());
         p3.setAlignText(new AlignLeft());
 
         System.out.println();
         System.out.println("Printing with Alignment");;
         System.out.println();
-        cap1.print(120);
     }
 }

@@ -1,4 +1,4 @@
-package ro.uvt.info.sp_lab;
+package ro.uvt.info.sp_lab.models;
 
 public class ImageProxy implements Element, Picture {
     private final String url;
@@ -9,17 +9,10 @@ public class ImageProxy implements Element, Picture {
         this.realImage = null;
     }
 
-    @Override
-    public void print() {
-        loadImage().print();
-    }
-
-    @Override
     public void add(Element element) {
         System.out.println("Images cannot contain other elements.");
     }
 
-    @Override
     public void remove(Element element) {
         System.out.println("Images cannot contain other elements.");
     }
