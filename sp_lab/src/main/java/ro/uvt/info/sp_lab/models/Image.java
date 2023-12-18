@@ -1,8 +1,8 @@
-package ro.uvt.info.sp_lab;
+package ro.uvt.info.sp_lab.models;
 
 import java.util.concurrent.TimeUnit;
 
-public class Image implements Element, Picture{
+public class Image implements Element, Picture, Visitee {
     private String url;
 
     public Image(String imageName) {
@@ -27,23 +27,21 @@ public class Image implements Element, Picture{
         this.url = imageName;
     }
 
-    public void print() {
-        System.out.println("Image: " + url);
-    }
-
-    @Override
     public void add(Element element) {
         System.out.println("Images cannot contain other elements.");
     }
 
-    @Override
     public void remove(Element element) {
         System.out.println("Images cannot contain other elements.");
     }
 
-    @Override
     public Element get(int nr) {
         System.out.println("Images cannot contain other elements.");
         return null;
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitImage(this);
     }
 }

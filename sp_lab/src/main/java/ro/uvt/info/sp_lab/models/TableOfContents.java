@@ -1,4 +1,4 @@
-package ro.uvt.info.sp_lab;
+package ro.uvt.info.sp_lab.models;
 
 import java.util.Dictionary;
 import java.util.Enumeration;

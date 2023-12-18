@@ -1,6 +1,6 @@
-package ro.uvt.info.sp_lab;
+package ro.uvt.info.sp_lab.models;
 
-public class Table implements Element{
+public class Table implements Element, Visitee {
     String title;
 
     public Table(String title) {
@@ -15,21 +15,19 @@ public class Table implements Element{
         this.title = title;
     }
 
-    public void print() {
-        System.out.println("Table: " + title);
+    @Override
+    public void accept(Visitor v) {
+        v.visitTable(this);
     }
 
-    @Override
     public void add(Element element) {
         System.out.println("Images cannot contain other elements.");
     }
 
-    @Override
     public void remove(Element element) {
         System.out.println("Images cannot contain other elements.");
     }
 
-    @Override
     public Element get(int nr) {
         System.out.println("Images cannot contain other elements.");
         return null;
