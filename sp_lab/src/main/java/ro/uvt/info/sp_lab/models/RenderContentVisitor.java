@@ -21,6 +21,16 @@ public class RenderContentVisitor implements Visitor {
     }
 
     @Override
+    public void visitBook(Book b) {
+        System.out.println("Book: " + b.getTitle());
+        System.out.println("Authors:");
+        for (Author author : b.getAuthors()) {
+            author.print();
+        }
+
+    }
+
+    @Override
     public void visitImage(Image i) {
         System.out.println("Image with name: " + i.getUrl());
     }

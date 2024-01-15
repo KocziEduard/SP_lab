@@ -3,10 +3,11 @@ package ro.uvt.info.sp_lab.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
+public class Book implements Visitee{
     String title;
     List<Author> authors = new ArrayList<>();
     List<Section> sections = new ArrayList<>();
+    Long id;
 
     public Book(String title) {
         this.title = title;
@@ -40,13 +41,16 @@ public class Book {
         sections.add(section);
     }
 
-    public void print() {
-        System.out.println("Title: " + title);
-        System.out.println("Authors:");
-        for (Author author : authors) {
-            author.print();
-        }
+    public Long getId() {
+        return id;
+    }
 
-        System.out.println("Sections:");
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitBook(this);
     }
 }
