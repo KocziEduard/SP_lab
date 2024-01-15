@@ -1,13 +1,24 @@
 package ro.uvt.info.sp_lab.models;
 
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Entity
+@NoArgsConstructor(force = true)
 public class Book implements Visitee{
-    String title;
-    List<Author> authors = new ArrayList<>();
-    List<Section> sections = new ArrayList<>();
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    String title;
+    @ManyToMany
+    List<Author> authors = new ArrayList<>();
+    @OneToMany
+    @JoinColumn(name = "book_id")
+    List<Section> sections = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
